@@ -9,11 +9,13 @@ import org.springframework.stereotype.Component;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 @Component
 public class ForecastModel {
     @Autowired
     private ForecastDao dao;
+
     public ForecastEntity getEntity(String city, String country, String region, String date){
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         Date parsedDate = null;
@@ -29,5 +31,9 @@ public class ForecastModel {
         key.setDate(parsedDate);
         ForecastEntity entity = dao.getByPrimaryKey(key);
         return entity;
+    }
+
+    public List<ForecastEntity> getAll(){
+        return dao.getAll();
     }
 }

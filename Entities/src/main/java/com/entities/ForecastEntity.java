@@ -1,10 +1,9 @@
 package com.entities;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.*;
 import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
@@ -12,6 +11,7 @@ import java.util.Locale;
 @Table(name = "Forecast", schema = "public", catalog = "WeatherBroker")
 @IdClass(ForecastEntityPK.class)
 @XmlRootElement(name = "Forecast")
+@XmlAccessorType(XmlAccessType.NONE)
 public class ForecastEntity {
     private String city;
     private String country;
@@ -66,6 +66,13 @@ public class ForecastEntity {
         return new SimpleDateFormat("dd MMM yyyy", Locale.US).format(date);
     }
 
+    public void setDateAsString(String date){
+        try {
+            this.date = new Date(new SimpleDateFormat("dd MMM yyyy", Locale.US).parse(date).getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
     public void setDate(Date date) {
         this.date = date;
     }

@@ -20,7 +20,7 @@
         <jms:listener destination="forecast" ref="messageReceiver" method="onMessage"/>
     </jms:listener-container>
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="driverClassName" value="${database.driver}" />
         <property name="url" value="${database.url}" />
         <property name="username" value="${database.username}" />
         <property name="password" value="${database.password}" />
@@ -32,9 +32,7 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</prop>
                 <prop key="hibernate.current_session_context_class">thread</prop>
-
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
-
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="format_sql">true</prop>
             </props>
