@@ -1,13 +1,15 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <html>
   <head>
   </head>
   <body>
-  <fmt:setLocale value="en_US" />
+  <spring:form modelAttribute="city">
+      <h3>Add forecast for city: </h3><spring:input path="name"/>
+      <spring:button>Add</spring:button>
+  </spring:form>
   <h3>Forecast list:</h3>
   <ul>
       <c:forEach items="${forecastList}" var = "forecast">
@@ -23,9 +25,5 @@
           </li>
       </c:forEach>
   </ul>
-  <spring:form modelAttribute="city">
-      <h3>Add forecast for city: </h3><spring:input path="name"/>
-      <spring:button>Add</spring:button>
-  </spring:form>
   </body>
 </html>

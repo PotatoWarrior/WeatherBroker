@@ -37,8 +37,9 @@ public class ForecastModel {
     private String getForecast(City city){
         String xml = "";
         URL url = null;
+        String cityName = city.getName().replace(" ", "%20");
         try {
-            url = new URL(weatherServiceUrl.replace("{city}", city.getName()));
+            url = new URL(weatherServiceUrl.replace("{city}", cityName));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
