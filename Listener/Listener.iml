@@ -9,6 +9,7 @@
         <datasource-map>
           <unit-entry name="a.xml" value="4f4cfe14-c89d-4c8f-8911-5cad054b68ab" />
           <unit-entry name="hibernate.cfg.xml" value="4f4cfe14-c89d-4c8f-8911-5cad054b68ab" />
+          <unit-entry name="sessionFactory" value="dataSource" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
@@ -88,6 +89,6 @@
     <orderEntry type="library" name="Maven: xerces:xmlParserAPIs:2.6.2" level="project" />
     <orderEntry type="library" name="Maven: xalan:xalan:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: com.ibm.icu:icu4j:2.6.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:3.0-alpha-1" level="project" />
   </component>
 </module>

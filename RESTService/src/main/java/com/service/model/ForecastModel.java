@@ -29,8 +29,7 @@ public class ForecastModel {
         key.setCountry(country);
         key.setRegion(region);
         key.setDate(parsedDate);
-        ForecastEntity entity = dao.getByPrimaryKey(key);
-        return entity;
+        return dao.getByPrimaryKey(key);
     }
 
     public List<ForecastEntity> getAll(){

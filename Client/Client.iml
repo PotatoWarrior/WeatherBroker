@@ -11,6 +11,8 @@
         </fileset>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="Spring Dispatcher Servlet" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/dispatcher-servlet.xml</file>
         </fileset>
       </configuration>
@@ -83,5 +85,6 @@
     <orderEntry type="library" name="Maven: javax.annotation:jsr250-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
   </component>
 </module>

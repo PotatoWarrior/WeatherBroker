@@ -19,6 +19,7 @@
         <spring.version>4.3.1.RELEASE</spring.version>
         <activemq.version>5.7.0</activemq.version>
         <hibernate.version>5.2.4.Final</hibernate.version>
+        <junit.version>4.12</junit.version>
         <postgresqldriver.version>9.4.1208</postgresqldriver.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -50,6 +51,11 @@
                 <configuration>
                     <skip>true</skip>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.7</version>
             </plugin>
         </plugins>
         <resources>
